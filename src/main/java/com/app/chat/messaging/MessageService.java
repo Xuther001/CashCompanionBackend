@@ -7,6 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.messaging.simp.SimpMessagingTemplate;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class MessageService {
 
@@ -22,16 +24,4 @@ public class MessageService {
         this.userRepository = userRepository;
     }
 
-//    public void saveMessage(MessageRequest messageRequest) {
-//        User sender = userRepository.findById(messageRequest.getSenderId()).orElse(null);
-//        User receiver = userRepository.findById(messageRequest.getReceiverId()).orElse(null);
-//
-//        if (sender != null && receiver != null) {
-//            Message message = new Message();
-//            message.setContent(messageRequest.getContent());
-//            message.setSender(sender);
-//            message.setReceiver(receiver);
-//            messageRepository.save(message);
-//        }
-//    }
 }

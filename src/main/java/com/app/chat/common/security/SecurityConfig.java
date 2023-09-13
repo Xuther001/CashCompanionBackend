@@ -35,7 +35,7 @@ public class SecurityConfig {
                 .csrf()
                 .disable()
                 .authorizeHttpRequests()
-                .requestMatchers("/api/v1/auth/**","/api/v1/auth/authenticate","/swagger-ui/**", "/bus/v3/api-docs/**", "/ws", "/api/v1/chat/send")
+                .requestMatchers("/api/v1/auth/**","/api/v1/auth/authenticate","/swagger-ui/**", "/bus/v3/api-docs/**", "/ws", "/api/v1/chat/messages/sentByUser","api/v1/chat/hello")
                 .permitAll()
                 .anyRequest()
                 .authenticated()

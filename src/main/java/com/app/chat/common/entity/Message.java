@@ -19,13 +19,9 @@ public class Message {
 
     private String content;
 
-    @ManyToOne
-    @JoinColumn(name = "sender_id")
-    private User sender;
+    private String sender;
 
-    @ManyToOne
-    @JoinColumn(name = "receiver_id")
-    private User receiver;
+    private String receiver;
 
     // Getters and setters
 }

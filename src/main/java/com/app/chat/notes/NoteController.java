@@ -5,7 +5,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api/v1/notes")
-@CrossOrigin(origins = "*")
+@CrossOrigin(origins = "/api/v1/notes")
 public class NoteController {
 
     @Autowired

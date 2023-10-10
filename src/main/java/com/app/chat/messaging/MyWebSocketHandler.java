@@ -32,7 +32,7 @@ public class MyWebSocketHandler extends TextWebSocketHandler {
         Map<String, Object> messageMap = objectMapper.readValue(payload, new TypeReference<Map<String, Object>>() {});
 
         System.out.println("Received message: " + message.getPayload());
-        session.sendMessage(new TextMessage("Echo: " + message.getPayload()));
+        session.sendMessage(new TextMessage(message.getPayload()));
 
         System.out.println("this is the token: " + messageMap.get("token"));
 

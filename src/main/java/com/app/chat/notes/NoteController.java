@@ -31,17 +31,16 @@ public class NoteController {
 
     @PostMapping
     public ResponseEntity<?> addNote(@RequestBody NoteRequest noteRequest) {
-        Long userId = noteRequest.getUserId();  // Extract user_id from the request
-        User user = userRepository.findById(userId).orElse(null);
-
-        if (user == null) {
-            // Handle the case where the user doesn't exist
-            return ResponseEntity.badRequest().body("Invalid user ID");
+        if (noteRequest.getContent() == null || noteRequest.getContent().isEmpty()) {
+            // Handle the case where content is missing or empty
+            return ResponseEntity.badRequest().body("Note content is missing.");
         }
 
         Note note = new Note();
         note.setContent(noteRequest.getContent());
-        note.setUser(user);
+        note.setUserid(noteRequest.getUserid());
+        // Set the user (userId) for the note here, depending on your logic
+        // note.setUser(user);
 
         noteRepository.save(note);
         return ResponseEntity.ok("Note created successfully");
@@ -50,12 +49,6 @@ public class NoteController {
     // Retrieving Notes by Username
     @GetMapping("/user/{username}")
     public List<Note> getNotesByUsername(@PathVariable String username) {
-        Optional<User> user = userService.findByUsername(username);
-        if (user.isPresent()) {
-            return noteRepository.findAllByUser(user);
-        } else {
-            // Handle the case where the user does not exist
-            return new ArrayList<>();
-        }
+        return noteRepository.findAllByUserid(username);
     }
 }

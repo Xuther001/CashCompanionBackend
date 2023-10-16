@@ -1,19 +1,11 @@
 package com.app.chat.notes;
 
 import lombok.Getter;
+import lombok.Setter;
 
 @Getter
+@Setter
 public class NoteRequest {
     private String content;
-    private Long userId; // This represents the user_id
-
-    // Constructors, getters, and setters
-
-    public void setContent(String content) {
-        this.content = content;
-    }
-
-    public void setUserId(Long userId) {
-        this.userId = userId;
-    }
+    private String userid; // This represents the user_id
 }

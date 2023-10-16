@@ -21,9 +21,8 @@ public class Note {
     @Column(nullable = false)
     private String content;
 
-    @ManyToOne
-    @JoinColumn(name = "user_id")
-    private User user;
+    @Column(nullable = false)
+    private String userid;
 
 }
 

@@ -7,5 +7,5 @@ import lombok.Setter;
 @Setter
 public class NoteRequest {
     private String content;
-    private String userid; // This represents the user_id
+    private String userid;
 }

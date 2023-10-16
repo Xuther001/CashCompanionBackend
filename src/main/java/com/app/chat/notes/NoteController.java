@@ -15,7 +15,9 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/v1/notes")
-@CrossOrigin(origins = "/api/v1/notes")
+//@CrossOrigin(origins = "/api/v1/notes")
+//@CrossOrigin(origins = {"/api/v1/notes", "/api/v1/notes/user/*"})
+//@CrossOrigin(origins = {"http://localhost:3000"})
 public class NoteController {
     @Autowired
     private NoteRepository noteRepository;
@@ -43,12 +45,32 @@ public class NoteController {
         // note.setUser(user);
 
         noteRepository.save(note);
-        return ResponseEntity.ok("Note created successfully");
+        Integer noteId = note.getId();
+        return ResponseEntity.ok("Note created successfully with ID: " + noteId);
     }
 
     // Retrieving Notes by Username
-    @GetMapping("/user/{username}")
-    public List<Note> getNotesByUsername(@PathVariable String username) {
-        return noteRepository.findAllByUserid(username);
+    @GetMapping("/user/{userid}")
+    @CrossOrigin(origins = "/api/v1/notes/user/{userid}")
+    public List<Note> getNotesByUsername(@PathVariable String userid) {
+        return noteRepository.findByUserid(userid);
+    }
+
+//    @GetMapping
+//    public List<Note> getAllNotes() {
+//        return noteRepository.findAll();
+//    }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<?> removeNoteById(@PathVariable Integer id) {
+        Optional<Note> noteOptional = noteRepository.findById(id);
+
+        if (noteOptional.isPresent()) {
+            Note note = noteOptional.get();
+            noteRepository.delete(note);
+            return ResponseEntity.ok("Note with ID " + id + " has been removed.");
+        } else {
+            return ResponseEntity.notFound().build();
+        }
     }
 }

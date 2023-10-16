@@ -8,6 +8,7 @@ import java.util.List;
 import java.util.Optional;
 
 @Repository
-public interface NoteRepository extends JpaRepository<Note, String> {
-    List<Note> findAllByUserid(String userid);
+public interface NoteRepository extends JpaRepository<Note, Integer> {
+    List<Note> findByUserid(String userid);
 }
+

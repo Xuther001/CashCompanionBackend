@@ -1,5 +1,6 @@
 package com.app.chat.notes;
 
+import com.app.chat.common.entity.User;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -19,6 +20,10 @@ public class Note {
 
     @Column(nullable = false)
     private String content;
+
+    @ManyToOne
+    @JoinColumn(name = "user_id")
+    private User user;
 
 }
 

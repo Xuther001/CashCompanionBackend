@@ -6,9 +6,9 @@ This app seeks to create a dynamic website where users can have live access to u
 It is also a place where users can message each other in real time. Users can also track their investment porfolio and
 create notes for themselves.
 
--This repository is the backend.
+- This repository is the backend.
  Previous commits of this repository can be found here: https://github.com/Xuther001/instakeep
--The frontend can be found here: https://github.com/Xuther001/chatfrontend
+- The frontend can be found here: https://github.com/Xuther001/chatfrontend
 
 Demo of the web app: https://www.youtube.com/watch?v=Rp8jBmOCXek
 
@@ -26,31 +26,29 @@ Just clone and run.
 There are three endpoints:
 
 POST /api/v1/notes
-    -Request body is as follows:
-
-    ```Bash
+    - Request body is as follows:
+    
     {
     "content": "string",
     "userid": "string"
     }
 
 GET /api/v1/notes
-    -This will return all notes regardless of who posted it:
+    - This will return all notes as a list regardless of who posted it:
       
-      ```Bash
-          [
+      [
         {
-          "id": 0,
+          "id": Integer,
           "content": "string",
           "userid": "string"
         }
       ]
 
 GET api/v1/notes/{userid}
-    -This endpoint is having issues with CORS and has been temporarily commented out.
+    - This endpoint is having issues with CORS and has been temporarily commented out.
 
 DELETE /api/v1/notes{id}
-    -This will delete note with id {id}
+    - This will delete note with id {id}
 
 
 

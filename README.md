@@ -8,7 +8,7 @@ create notes for themselves. ChatGPT is also integrated to assist you for any in
 
 - This repository is the backend.
  Previous commits of this repository can be found here: https://github.com/Xuther001/instakeep
-- The frontend can be found here: https://github.com/Xuther001/chatfrontend
+- The frontend can be found here: https://github.com/Xuther001/CashCompanionFrontend
 
 Demo of the web app: https://www.youtube.com/watch?v=Rp8jBmOCXek
 

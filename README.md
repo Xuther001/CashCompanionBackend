@@ -25,9 +25,9 @@ Just clone and run.
 
 The endpoints are:
 
-POST /api/v1/auth/register
-    Use this to register a user
-    - Request body is as follows:
+POST /api/v1/auth/register  
+    Use this to register a user  
+    - Request body is as follows:  
    
     {
      "firstname": "string",

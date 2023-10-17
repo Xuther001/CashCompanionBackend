@@ -25,7 +25,7 @@ Just clone and run.
 
 The endpoints are:
 
-POST /api/v1/auth/register<br>
+**Bold**POST /api/v1/auth/register<br>
     Use this to register a user<br>
     - Request body is as follows:<br>
    
@@ -37,7 +37,7 @@ POST /api/v1/auth/register<br>
      "username": "string"
     }
 
-POST /api/v1/auth/authenticate<br>
+**Bold**POST /api/v1/auth/authenticate<br>
     Use this to authenticate a user<br>
     - Request body is as follows:<br>
 
@@ -46,7 +46,7 @@ POST /api/v1/auth/authenticate<br>
      "password": "string"
     }
 
-POST /api/v1/notes<br>
+**Bold**POST /api/v1/notes<br>
     Use this to create a note<br>
     - Request body is as follows:<br>
     
@@ -55,7 +55,7 @@ POST /api/v1/notes<br>
     "userid": "string"
     }
 
-GET /api/v1/notes<br>
+**Bold**GET /api/v1/notes<br>
     Use this to get all notes regardless of who posted them<br>
     - This will return the following list<br>
       
@@ -67,7 +67,7 @@ GET /api/v1/notes<br>
         }
       ]
 
-GET api/v1/notes/{userid}<br>
+**Bold**GET api/v1/notes/{userid}<br>
     Use this to get all notes posted by a user<br>
     This endpoint is having issues with CORS and has been temporarily commented out.<br>
     - This will return the following list<br>
@@ -80,20 +80,5 @@ GET api/v1/notes/{userid}<br>
         }
       ]
 
-DELETE /api/v1/notes{id}<br>
+**Bold**DELETE /api/v1/notes{id}<br>
     This will delete note with id {id}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

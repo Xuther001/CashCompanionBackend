@@ -2,8 +2,8 @@
 
 Brief project description and purpose.
 
-This app seeks to create a dynamic website where users can have live access to up to date stock quotes and financial news.
-It is also a place where users can message each other in real time. Users can also track their investment porfolio and
+This app seeks to create a dynamic website where users can have live access to up-to-date stock quotes and financial news.
+It is also a place where users can message each other in real-time. Users can also track their investment porfolio and
 create notes for themselves.
 
 - This repository is the backend.

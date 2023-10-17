@@ -1,32 +1,17 @@
 package com.app.chat.notes;
 
-import com.app.chat.module.user.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import com.app.chat.common.entity.User;
-import com.app.chat.common.security.service.UserService;
-import com.app.chat.module.user.repository.UserRepository;
-
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/v1/notes")
-//@CrossOrigin(origins = "/api/v1/notes")
-//@CrossOrigin(origins = {"/api/v1/notes", "/api/v1/notes/user/*"})
-//@CrossOrigin(origins = {"http://localhost:3000"})
 public class NoteController {
     @Autowired
     private NoteRepository noteRepository;
-
-    @Autowired
-    private UserRepository userRepository;
-
-    @Autowired
-    private UserService userService;
 
     public NoteController() {
     }
@@ -49,18 +34,19 @@ public class NoteController {
         return ResponseEntity.ok("Note created successfully with ID: " + noteId);
     }
 
-    // Retrieving Notes by Username
-    @GetMapping("/user/{userid}")
-    @CrossOrigin(origins = "/api/v1/notes/user/{userid}")
-    public List<Note> getNotesByUsername(@PathVariable String userid) {
-        return noteRepository.findByUserid(userid);
-    }
-
-//    @GetMapping
-//    public List<Note> getAllNotes() {
-//        return noteRepository.findAll();
+//     This has CORS issue
+//    @GetMapping( "/{userid}")
+//    public List<Note> getNotesByUsername(@PathVariable String userid) {
+//        return noteRepository.findByUserid(userid);
 //    }
 
+    @GetMapping
+    public List<Note> getAllNotes() {
+        return noteRepository.findAll();
+    }
+
+
+    // Frontend is not using this endpoint at the moment due to CORS issue
     @DeleteMapping("/{id}")
     public ResponseEntity<?> removeNoteById(@PathVariable Integer id) {
         Optional<Note> noteOptional = noteRepository.findById(id);

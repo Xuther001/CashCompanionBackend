@@ -18,6 +18,7 @@ public class AuthenticationController {
         return ResponseEntity.ok(service.register(request));
     }
 
+//    @CrossOrigin(origins = "http://localhost:3000/")
     @PostMapping("/authenticate")
 //    @CrossOrigin(origins = "http://54.218.229.27:3000/")
 //    @CrossOrigin(origins = "*", allowedHeaders = "*")

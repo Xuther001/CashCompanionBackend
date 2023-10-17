@@ -23,7 +23,24 @@ Just clone and run.
 
 ## Usage
 
-There are three endpoints:
+The endpoints are:
+
+POST /api/v1/auth/register
+   
+    {
+     "firstname": "string",
+     "lastname": "string",
+     "email": "string",
+     "password": "string",
+     "username": "string"
+    }
+
+POST /api/v1/auth/authenticate
+
+    {
+     "username": "string",
+     "password": "string"
+    }
 
 POST /api/v1/notes
     - Request body is as follows:

@@ -39,6 +39,11 @@ dependencies {
 
 	//for CORS
 //	implementation 'javax.servlet:javax.servlet-api:4.0.1'
+
+	implementation 'org.springframework.boot:spring-boot-starter-actuator'
+
+	// Swagger
+	implementation 'org.springdoc:springdoc-openapi-starter-webmvc-ui:2.2.0'
 }
 
 tasks.named('test') {

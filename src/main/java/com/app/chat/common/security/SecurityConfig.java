@@ -10,6 +10,9 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
+import org.springframework.web.cors.CorsConfiguration;
+import org.springframework.web.cors.CorsConfigurationSource;
+import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 
 import static org.springframework.security.config.Customizer.withDefaults;
 
@@ -32,10 +35,10 @@ public class SecurityConfig {
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
-                .csrf()
-                .disable()
+                .cors().and() // Have to have this or "has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource."
+                .csrf().disable()
                 .authorizeHttpRequests()
-                .requestMatchers("/api/v1/auth/**","/api/v1/auth/authenticate","/swagger-ui/**", "/bus/v3/api-docs/**", "/ws", "/api/v1/chat/messages/sentByUser","api/v1/chat/hello", "/api/v1/notes")
+                .requestMatchers("/v3/api-docs/swagger-config","/v2/api-docs/**","/swagger.json","/swagger-ui.html","/swagger-resources/**","/webjars/**","/api/v1/auth/**","/api/v1/auth/authenticate","/swagger-ui/**", "/bus/v3/api-docs/**", "/ws", "/api/v1/chat/messages/sentByUser","api/v1/chat/hello", "/api/v1/notes/**","/api/v1/notes")
                 .permitAll()
                 .anyRequest()
                 .authenticated()
@@ -48,5 +51,18 @@ public class SecurityConfig {
 
         return http.build();
     }
+
+//    @Bean
+//    public CorsConfigurationSource corsConfigurationSource() {
+//        CorsConfiguration configuration = new CorsConfiguration();
+//        configuration.addAllowedOrigin("http://localhost:3000"); // You can set the allowed origin(s) here.
+//        configuration.addAllowedMethod("GET, POST, PUT, DELETE"); // You can set specific HTTP methods (e.g., GET, POST) or use "*".
+//        configuration.addAllowedHeader("Content-Type"); // You can set specific HTTP headers or use "*".
+//
+//        UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
+//        source.registerCorsConfiguration("/**", configuration);
+//
+//        return source;
+//    }
 
 }

@@ -20,6 +20,8 @@ Demo of the web app: https://www.youtube.com/watch?v=Rp8jBmOCXek
 
 Just clone and run.
 
+Make sure to change the configurations in application.properties to match your PostgreSQL configurations.
+
 ## Usage
 
 The endpoints are:

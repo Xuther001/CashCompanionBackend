@@ -7,7 +7,6 @@ It is also a place where users can message each other in real-time. Users can al
 create notes for themselves. ChatGPT is also integrated to assist users for any inquiries they may have.
 
 - This repository is the backend.
- Previous commits of this repository can be found here: https://github.com/Xuther001/instakeep
 - The frontend can be found here: https://github.com/Xuther001/CashCompanionFrontend
 
 Demo of the web app: https://www.youtube.com/watch?v=Rp8jBmOCXek

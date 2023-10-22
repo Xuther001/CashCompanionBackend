@@ -9,7 +9,7 @@ create notes for themselves. ChatGPT is also integrated to assist users for any 
 - This repository is the backend.
 - The frontend can be found here: https://github.com/Xuther001/CashCompanionFrontend
 
-Demo of the web app: https://www.youtube.com/watch?v=Rp8jBmOCXek
+Demo of the web app: https://www.youtube.com/watch?v=WgF6D-FXNug
 
 ## Table of Contents
 
